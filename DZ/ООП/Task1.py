@@ -48,7 +48,16 @@ class DiningTable():
         self.lenght=int(input("Введите ширину стола "))
         self.height=int(input("Введите высотуу стола    "))
         self.color=input("введи цвет    ")
-        self.NumbSeats=int(input("Введите количество посадочных мест    "))
+        while True:
+            try:
+                self.NumbSeats=int(input("Введите количество посадочных мест    "))
+                if self.NumbSeats>0:
+                    break
+                elif self.NumbSeats<0:
+                    continue
+            except ValueError:
+                print("Введите целое число")   
+                continue
         # return self.NumbSeats
     
     def Print(self):
